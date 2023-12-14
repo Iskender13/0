@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,5 +30,13 @@
         android:layout_height="wrap_content"
         android:text="calculate"
         android:id="@+id/calculateBtn"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView3"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/my_nav" />
 
 </LinearLayout>

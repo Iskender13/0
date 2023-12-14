@@ -1,14 +1,17 @@
 package com.example.retrofit
 
-import androidx.appcompat.app.AppCompatActivity
+import android.R
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.Navigation.findNavController
 import com.example.retrofit.databinding.ActivityMainBinding
-import com.example.retrofit.remote.LoveModel
-import retrofit2.Response
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val viewModel: LoveViewModel by viewModels()
@@ -16,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
         initClickers()
     }
 

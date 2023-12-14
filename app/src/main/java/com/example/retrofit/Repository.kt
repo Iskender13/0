@@ -1,15 +1,15 @@
-package com.example
+package com.example.retrofit
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.example.retrofit.remote.LoveApi
 import com.example.retrofit.remote.LoveModel
-import com.example.retrofit.remote.RetrofitService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class Repository {
-    val api =RetrofitService.api
+class Repository @Inject constructor(private val api: LoveApi){
     fun getData(firstName: String, secondName: String) : MutableLiveData<LoveModel>{
         var love=MutableLiveData<LoveModel>()
         api.getLove(firstName, secondName).enqueue(object: Callback<LoveModel>{
